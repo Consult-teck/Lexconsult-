@@ -1,3 +1,25 @@
+/* FORCE MOBILE FIX - Contact page */
+@media (max-width: 768px) {
+  /* Target the container and force vertical stacking */
+  .container > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+  
+  /* Make all form inputs full width */
+  input, textarea, select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix padding */
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
 /* ===== MOBILE FIX: Stack form BELOW contact info ===== */
 @media (max-width: 768px) {
   /* Make the grid stack vertically */
