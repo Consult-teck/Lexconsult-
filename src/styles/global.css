@@ -400,3 +400,73 @@ html, body {
     padding: 0 !important;
   }
 }
+
+/* ======================================== */
+/* COMPREHENSIVE MOBILE FIX - ALL PAGES */
+/* ======================================== */
+
+/* Fix all form inputs everywhere */
+input, textarea, select {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix all tables (dashboard, admin) */
+table, .table, [class*="table"] {
+  display: block !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix all cards on mobile */
+@media (max-width: 768px) {
+  /* Consistent padding for all sections */
+  .section, section:not(.hero) {
+    padding: 48px 16px !important;
+  }
+  
+  /* Fix hero section */
+  .hero {
+    padding: 80px 16px 40px !important;
+    text-align: center;
+  }
+  
+  /* Hide floating cards on mobile (they overlap text) */
+  .hero-visual {
+    display: none !important;
+  }
+  
+  /* Fix all form groups */
+  .form-group {
+    width: 100% !important;
+    margin-bottom: 16px;
+  }
+  
+  /* Fix all buttons to be full width on mobile */
+  .btn-primary, .btn-secondary, .btn-dark {
+    display: block !important;
+    width: 100% !important;
+    text-align: center;
+    margin: 8px 0;
+  }
+  
+  /* Fix lawyer cards */
+  .lawyer-card, [class*="Card"] {
+    padding: 16px !important;
+  }
+  
+  /* Fix dashboard stats cards */
+  .stat-card, [class*="Stat"] {
+    width: 100% !important;
+    margin: 8px 0;
+  }
+  
+  /* Fix any horizontal overflow */
+  .container, [class*="container"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow-x: hidden;
+  }
+}
