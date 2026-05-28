@@ -236,3 +236,29 @@
   .stat-item { flex: 1 1 40%; border-right: none; border-bottom: 1px solid var(--border); }
   .steps { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+  .steps {
+    grid-template-columns: 1fr !important;
+    overflow: hidden;
+  }
+
+  .hero {
+    overflow: hidden;
+    padding: 90px 16px 50px !important;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .stats-bar .container {
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}

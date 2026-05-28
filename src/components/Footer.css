@@ -128,3 +128,10 @@
   .footer-brand { grid-column: auto; }
   .footer-bottom .container { flex-direction: column; gap: 10px; text-align: center; }
 }
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    overflow: hidden;
+  }
+}
