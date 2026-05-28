@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./About.css";
 
 const values = [
   { icon: "⚖️", title: "Justice for All", desc: "We believe quality legal representation should not be a privilege of the wealthy." },
@@ -26,7 +27,7 @@ export default function About() {
       {/* MISSION */}
       <section className="section" style={{ background: "var(--cream)" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="about-mission-grid">
             <div>
               <span className="eyebrow" style={{ color: "var(--gold-dark)" }}>Our Story</span>
               <h2 className="section-title" style={{ marginTop: 8 }}>Built to Bridge the Justice Gap</h2>
@@ -41,7 +42,7 @@ export default function About() {
             </div>
 
             <div style={{ background: "var(--navy)", borderRadius: 16, padding: 40 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+              <div className="about-stats-grid">
                 {[["10,000+", "Clients Served"], ["48", "Expert Lawyers"], ["6", "Cities"], ["98%", "Satisfaction Rate"]].map(([n, l]) => (
                   <div key={l} style={{ textAlign: "center", padding: 20, background: "rgba(255,255,255,0.04)", borderRadius: 10, border: "1px solid rgba(201,168,76,0.1)" }}>
                     <strong style={{ fontFamily: "'Playfair Display', serif", fontSize: "2.2rem", color: "var(--gold)", display: "block", lineHeight: 1 }}>{n}</strong>

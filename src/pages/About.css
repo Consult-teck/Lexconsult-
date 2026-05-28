@@ -1,0 +1,23 @@
+.about-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-mission-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
