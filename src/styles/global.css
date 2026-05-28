@@ -590,3 +590,43 @@ input, textarea, select {
     display: block !important;
   }
 }
+
+/* ===== CONTACT PAGE: Stack form BELOW contact info on mobile ===== */
+@media (max-width: 768px) {
+  /* Make the contact page grid stack vertically */
+  .contact-page .grid-2,
+  .contact-grid,
+  .contact-page .row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+  
+  /* Form goes SECOND (below contact info) */
+  .contact-form {
+    order: 2 !important;
+  }
+  
+  /* Contact info goes FIRST (above form) */
+  .contact-info,
+  .contact-details,
+  [class*="contact-info"] {
+    order: 1 !important;
+  }
+  
+  /* Make both sections full width */
+  .contact-form,
+  .contact-info {
+    width: 100% !important;
+  }
+  
+  /* Fix any cut off issues */
+  .contact-page {
+    overflow-x: hidden !important;
+  }
+  
+  .contact-page .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
