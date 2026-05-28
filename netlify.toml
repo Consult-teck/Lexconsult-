@@ -1,6 +1,7 @@
 [build]
-   command = "CI=false ./node_modules/.bin/react-scripts build"
+   command = "npm install '&& npm run build"
    publish = "build"
 
 [build.environment]
   NODE_OPTIONS = "--openssl-legacy-provider"
+  CI = "false"
