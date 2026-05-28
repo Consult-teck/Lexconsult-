@@ -1,17 +1,43 @@
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.contact-form-card {
-  padding: 30px;
-}
-
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
+/* ===== MOBILE FIX: Stack form BELOW contact info ===== */
+@media (max-width: 768px) {
+  /* Make the grid stack vertically */
+  .contact-grid,
+  .contact-page .grid-2,
+  .contact-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+  
+  /* Form goes below contact info */
+  .contact-form {
+    order: 2 !important;
+  }
+  
+  /* Contact info goes on top */
+  .contact-info,
+  .contact-details {
+    order: 1 !important;
+  }
+  
+  /* Make both full width */
+  .contact-form,
+  .contact-info {
+    width: 100% !important;
+  }
+  
+  /* Fix input fields */
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+  }
+  
+  /* Fix container padding */
+  .contact-page .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }
