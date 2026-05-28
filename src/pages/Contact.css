@@ -5,9 +5,13 @@
   align-items: start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px;
+    gap: 32px !important;
+  }
+  .contact-grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
