@@ -473,3 +473,49 @@ input, textarea, select {
     word-wrap: break-word !important;
   }
 }
+
+
+/* ===== FIX SERVICES PAGE PROCESS SECTION TO MATCH HOME PAGE ===== */
+@media (max-width: 768px) {
+  /* Make process grid stack vertically like Home page */
+  .process-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  /* Make each step look like Home page cards */
+  .process-step {
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
+    padding: 24px 20px !important;
+  }
+  
+  /* Hide the arrows between steps on mobile */
+  .process-arrow {
+    display: none !important;
+  }
+  
+  /* Step number styling - match Home page */
+  .process-num {
+    font-size: 2.5rem !important;
+    color: var(--gold) !important;
+    opacity: 1 !important;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Step title - match Home page */
+  .process-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Step description - match Home page */
+  .process-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+  }
+}

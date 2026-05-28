@@ -75,20 +75,57 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Process */}
+           {/* Process - Fixed for Mobile */}
       <section className="section" style={{ background: "var(--navy)" }}>
         <div className="container">
           <span className="eyebrow" style={{ color: "var(--gold)" }}>How We Work</span>
           <h2 className="section-title" style={{ color: "white", marginTop: 8 }}>Our Process</h2>
           <div className="gold-line" style={{ margin: "0 0 48px" }}></div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+          
+          {/* Process Grid - Desktop vs Mobile */}
+          <div className="process-grid" style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(4, 1fr)", 
+            gap: 24 
+          }}>
             {process.map((p, i) => (
-              <div key={p.num} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(201,168,76,0.12)", borderRadius: 10, padding: 28, position: "relative" }}>
-                <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "2.8rem", fontWeight: 900, color: "rgba(201,168,76,0.2)", display: "block", marginBottom: 8 }}>{p.num}</span>
-                <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, color: "var(--gold)", marginBottom: 10, fontSize: "0.95rem" }}>{p.title}</h3>
-                <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.65 }}>{p.desc}</p>
+              <div key={p.num} className="process-step" style={{ 
+                background: "rgba(255,255,255,0.04)", 
+                border: "1px solid rgba(201,168,76,0.12)", 
+                borderRadius: 10, 
+                padding: 28, 
+                position: "relative" 
+              }}>
+                <span className="process-num" style={{ 
+                  fontFamily: "'Playfair Display', serif", 
+                  fontSize: "2.8rem", 
+                  fontWeight: 900, 
+                  color: "rgba(201,168,76,0.2)", 
+                  display: "block", 
+                  marginBottom: 8 
+                }}>{p.num}</span>
+                <h3 className="process-title" style={{ 
+                  fontFamily: "'DM Sans', sans-serif", 
+                  fontWeight: 700, 
+                  color: "var(--gold)", 
+                  marginBottom: 10, 
+                  fontSize: "0.95rem" 
+                }}>{p.title}</h3>
+                <p className="process-desc" style={{ 
+                  fontSize: "0.85rem", 
+                  color: "rgba(255,255,255,0.55)", 
+                  lineHeight: 1.65 
+                }}>{p.desc}</p>
                 {i < process.length - 1 && (
-                  <span style={{ position: "absolute", right: -12, top: "50%", transform: "translateY(-50%)", color: "var(--gold)", opacity: 0.4, fontSize: "1.2rem" }}>→</span>
+                  <span className="process-arrow" style={{ 
+                    position: "absolute", 
+                    right: -12, 
+                    top: "50%", 
+                    transform: "translateY(-50%)", 
+                    color: "var(--gold)", 
+                    opacity: 0.4, 
+                    fontSize: "1.2rem" 
+                  }}>→</span>
                 )}
               </div>
             ))}
