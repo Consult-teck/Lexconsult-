@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 :root {
@@ -25,9 +24,15 @@
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+}
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -117,18 +122,6 @@ input, textarea, select {
   box-shadow: var(--shadow-md);
 }
 
-.btn-danger {
-  background: var(--danger);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  border-radius: var(--radius);
-  transition: var(--transition);
-}
-.btn-danger:hover { opacity: 0.85; }
-
 /* Form elements */
 .form-group { margin-bottom: 20px; }
 .form-group label {
@@ -160,19 +153,51 @@ input, textarea, select {
 }
 .form-group textarea { resize: vertical; min-height: 100px; }
 
+/* Container */
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 24px; 
+}
+
+/* Grid systems */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+/* Section */
+.section { padding: 80px 0; }
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 16px auto 48px;
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  padding: 24px;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
 /* Page hero */
 .page-hero {
   background: var(--navy);
   padding: 80px 24px 60px;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, transparent 60%);
 }
 .page-hero h1 {
   color: var(--white);
@@ -185,319 +210,139 @@ input, textarea, select {
   max-width: 560px;
   margin: 0 auto;
 }
-.gold-line {
-  width: 60px;
-  height: 3px;
-  background: var(--gold);
-  margin: 16px auto;
-}
-
-/* Cards */
-.card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border);
-  transition: var(--transition);
-}
-.card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-/* Section */
-.section { padding: 80px 24px; }
-.section-title {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  margin-bottom: 12px;
-  color: var(--navy);
-}
-.section-subtitle {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  margin-bottom: 48px;
-  max-width: 560px;
-}
-
-/* Container */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; overflow-x: hidden;}
-
-/* Badge */
-.badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.badge-gold { background: rgba(201,168,76,0.15); color: var(--gold-dark); }
-.badge-success { background: rgba(26,122,74,0.12); color: var(--success); }
-.badge-danger { background: rgba(192,57,43,0.12); color: var(--danger); }
-.badge-navy { background: rgba(13,27,42,0.08); color: var(--navy); }
-
-/* Loading */
-.loading-screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  gap: 12px;
-  color: var(--text-secondary);
-}
-.spinner {
-  width: 28px; height: 28px;
-  border: 3px solid var(--cream-dark);
-  border-top-color: var(--gold);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* Toast */
-.toast {
-  position: fixed;
-  bottom: 24px; right: 24px;
-  background: var(--navy);
-  color: white;
-  padding: 14px 20px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  box-shadow: var(--shadow-lg);
-  z-index: 9999;
-  animation: slideIn 0.3s ease;
-  border-left: 4px solid var(--gold);
-}
-@keyframes slideIn { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
-
-/* Divider */
-.divider {
-  height: 1px;
-  background: var(--border);
-  margin: 32px 0;
-}
-
-/* Responsive grid */
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-
-@media (max-width: 900px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  .section { padding: 56px 16px; }
-}
-
-/* ===== TABS (shared across Dashboard, Admin) ===== */
-.dash-tabs {
-  display: flex;
-  gap: 0;
-  border-bottom: 2px solid var(--border);
-  margin-bottom: 28px;
-}
-.dash-tabs button {
-  background: none;
-  border: none;
-  padding: 12px 24px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  transition: var(--transition);
-  font-family: 'DM Sans', sans-serif;
-}
-.dash-tabs button.active { color: var(--navy); border-bottom-color: var(--gold); }
-.dash-tabs button:hover { color: var(--navy); }
-.tab-count { background: var(--cream-dark); color: var(--text-muted); padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; }
-
-/* ===== MISSING UTILITY CLASSES ===== */
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-@media (max-width: 900px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-}
-
-/* ===== GLOBAL OVERFLOW FIX ===== */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100% !important;
-}
-
-/* ===== NUCLEAR MOBILE FIX ===== */
-@media (max-width: 900px) {
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-  }
-
-  .steps,
-  .g2, .g3, .g4,
-  .grid-2, .grid-3, .grid-4,
-  .book-layout,
-  .case-layout,
-  .footer-inner,
-  .contact-grid,
-  .auth-page {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    overflow: hidden !important;
-  }
-
-  .container {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
-    overflow: hidden !important;
-    max-width: 100vw !important;
-  }
-
-  .hero {
-    padding: 90px 14px 50px !important;
-    overflow: hidden !important;
-  }
-
-  .auth-side { display: none !important; }
-
-  section, div {
-    max-width: 100vw !important;
-  }
-}
-
-/* Super small phone fix (Infinix Hot 40i and similar) */
-@media (max-width: 380px) {
-  .container {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-  
-  input, 
-  textarea, 
-  select, 
-  button {
-    font-size: 16px !important; /* Prevents zoom on focus */
-  }
-  
-  .contact-form,
-  .contact-info {
-    width: 100% !important;
-    padding: 0 !important;
-  }
-}
 
 /* ======================================== */
-/* COMPREHENSIVE MOBILE FIX - ALL PAGES */
+/* CRITICAL: COMPLETE MOBILE FIX - ALL PAGES */
 /* ======================================== */
-
-/* Fix all form inputs everywhere */
-input, textarea, select {
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* Fix all tables (dashboard, admin) */
-table, .table, [class*="table"] {
-  display: block !important;
-  overflow-x: auto !important;
-  white-space: nowrap !important;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Fix all cards on mobile */
 @media (max-width: 768px) {
-  /* Consistent padding for all sections */
-  .section, section:not(.hero) {
-    padding: 48px 16px !important;
+  /* Containers */
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
   }
   
-  /* Fix hero section */
+  /* All grids become single column */
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 50px 0 !important;
+  }
+  
+  /* Fix all text wrapping - THIS PREVENTS CUT OFF TEXT */
+  p, h1, h2, h3, h4, li, span, .step p, .service-card p, .about-text, .process-text {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+  
+  /* Hero section */
   .hero {
-    padding: 80px 16px 40px !important;
+    padding: 80px 20px 40px !important;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2rem !important;
+  }
+  .hero-visual {
+    display: none !important; /* Removes overlapping floating cards */
+  }
+  
+  /* Fix ALL form inputs - Contact, Login, Register */
+  input, textarea, select, .form-group input, .form-group textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important; /* Prevents zoom */
+  }
+  
+  /* Ensure contact form is visible */
+  .contact-form, form, [class*="contact-form"] {
+    display: block !important;
+    width: 100% !important;
+    visibility: visible !important;
+  }
+  
+  /* Contact page specific - ensure grid becomes block */
+  .contact-grid, .contact-page .grid-2 {
+    display: block !important;
+  }
+  
+  /* Stats bar */
+  .stats-bar .container {
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
   }
   
-  /* Hide floating cards on mobile (they overlap text) */
-  .hero-visual {
-    display: none !important;
+  /* Steps/Process */
+  .steps {
+    flex-direction: column;
+    gap: 30px;
   }
   
-  /* Fix all form groups */
-  .form-group {
-    width: 100% !important;
-    margin-bottom: 16px;
-  }
-  
-  /* Fix all buttons to be full width on mobile */
+  /* Buttons full width on mobile */
   .btn-primary, .btn-secondary, .btn-dark {
     display: block !important;
     width: 100% !important;
     text-align: center;
-    margin: 8px 0;
+    margin: 8px 0 !important;
   }
   
-  /* Fix lawyer cards */
-  .lawyer-card, [class*="Card"] {
-    padding: 16px !important;
+  /* Button groups */
+  .hero-cta, .form-actions, .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   
-  /* Fix dashboard stats cards */
-  .stat-card, [class*="Stat"] {
-    width: 100% !important;
-    margin: 8px 0;
+  /* Tables (Dashboard, Admin) */
+  table, .table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
   }
   
-  /* Fix any horizontal overflow */
-  .container, [class*="container"] {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    overflow-x: hidden;
+  /* Fix any absolute positioned elements */
+  [style*="position: absolute"], 
+  [style*="position:absolute"] {
+    position: relative !important;
+  }
+  
+  /* Ensure nothing exceeds screen width */
+  * {
+    max-width: 100vw !important;
+  }
+  
+  /* Fix navbar */
+  .nav-inner {
+    padding: 0 16px !important;
+  }
+  
+  /* Footer */
+  footer .container {
+    text-align: center;
   }
 }
 
-/* EMERGENCY FIX - Contact form missing on mobile */
-@media (max-width: 768px) {
-  /* Force contact form to show */
-  .contact-grid,
-  .contact-page .grid-2,
-  [class*="contact"] .row {
-    display: block !important;
+/* Extra small phones (Infinix Hot 40i, iPhone SE) */
+@media (max-width: 380px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
   
-  .contact-form,
-  form:has(input),
-  form:has(textarea) {
-    display: block !important;
-    width: 100% !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  h1 {
+    font-size: 1.8rem !important;
   }
   
-  /* Fix text cutting off */
-  p, li, .step p, .service-card p {
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    white-space: normal !important;
-  }
-  
-  /* Ensure containers aren't hiding content */
-  .container, .section, .home, .contact-page {
-    overflow: visible !important;
+  .section-title {
+    font-size: 1.6rem !important;
   }
 }
