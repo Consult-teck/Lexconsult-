@@ -389,3 +389,17 @@ body {
     max-width: 100% !important;
   }
 }
+
+@media (max-width: 768px) {
+  .steps {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stat-item {
+    flex: 1 1 45% !important;
+  }
+
+  .stats-bar .container {
+    flex-wrap: wrap !important;
+  }
+}
