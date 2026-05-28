@@ -52,3 +52,51 @@
     padding: 24px !important;
   }
 }
+
+/* ===== MOBILE FIX: Stack stats below team section ===== */
+@media (max-width: 768px) {
+  /* Stack mission section vertically */
+  .about-mission-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  
+  /* Reorder: Text first, then image on mobile */
+  .about-mission-grid > div:first-child {
+    order: 1 !important;
+  }
+  
+  .about-mission-grid > div:last-child {
+    order: 2 !important;
+  }
+  
+  /* Make stats grid single column on mobile */
+  .about-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  /* Make each stat card full width */
+  .about-stat-item {
+    width: 100% !important;
+    padding: 16px !important;
+  }
+  
+  /* Fix any cut off text */
+  .about-stat-item strong {
+    font-size: 1.8rem !important;
+    word-wrap: break-word !important;
+  }
+  
+  .about-stat-item span {
+    font-size: 0.7rem !important;
+  }
+  
+  /* Fix container padding */
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow-x: hidden !important;
+  }
+}
