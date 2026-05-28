@@ -5,19 +5,50 @@
   align-items: center;
 }
 
+.about-stats-box {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 40px;
+}
+
 .about-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
+.about-stat-item {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(201,168,76,0.1);
+}
+
+.about-stat-item strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.about-stat-item span {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-top: 8px;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .about-mission-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px;
+    gap: 32px !important;
   }
 
-  .about-stats-grid {
-    grid-template-columns: 1fr 1fr !important;
+  .about-stats-box {
+    padding: 24px !important;
   }
 }
