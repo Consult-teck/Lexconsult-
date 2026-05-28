@@ -1,5 +1,5 @@
 [build]
-   command = "CI=false ./node_modules/.bin/react-script build"
+   command = "CI=false ./node_modules/.bin/react-scripts build"
    publish = "build"
 
 [build.environment]
