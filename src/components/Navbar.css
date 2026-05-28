@@ -217,3 +217,21 @@
   .user-dropdown { position: static; display: none; }
   .nav-user:hover .user-dropdown { display: block; }
 }
+
+/* Mobile fix for navbar */
+@media (max-width: 768px) {
+  .nav-inner {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
+    overflow-x: hidden;
+  }
+  
+  .nav-links {
+    width: 100%;
+  }
+  
+  .navbar {
+    overflow-x: hidden;
+  }
+}

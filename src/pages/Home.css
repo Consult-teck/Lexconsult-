@@ -194,7 +194,7 @@
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;overflow: hidden;
+  gap: 32px;
 }
 .step { padding: 28px 20px; background: rgba(255,255,255,0.04); border-radius: 8px; border: 1px solid rgba(201,168,76,0.12); }
 .step-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: rgba(201,168,76,0.25); display: block; margin-bottom: 8px; }
@@ -230,35 +230,46 @@
   .hero-visual { display: none; }
   .steps { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 600px) {
-  .hero { padding: 100px 20px 60px; }
-  .stats-bar .container { flex-wrap: wrap; }
-  .stat-item { flex: 1 1 40%; border-right: none; border-bottom: 1px solid var(--border); }
-  .steps { grid-template-columns: 1fr; }
-}
-
 @media (max-width: 768px) {
+  .hero {
+    padding: 90px 16px 50px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+  }
+  .hero h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+  .hero-cta { flex-direction: column; }
+  .hero-trust { gap: 12px; }
   .steps {
     grid-template-columns: 1fr !important;
-    overflow: hidden;
+    overflow: hidden !important;
+    width: 100% !important;
   }
+  .stats-bar .container { flex-wrap: wrap; }
+  .stat-item { flex: 1 1 45%; border-right: none; border-bottom: 1px solid var(--border); }
+  .cta-banner { padding: 48px 16px; }
+  .cta-banner div { flex-direction: column; align-items: center; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 90px 14px 48px !important; }
+  .stats-bar .container { flex-wrap: wrap; }
+  .stat-item { flex: 1 1 40%; border-right: none; border-bottom: 1px solid var(--border); }
+  .steps { grid-template-columns: 1fr !important; }
+}
 
-  .hero {
-    overflow: hidden;
-    padding: 90px 16px 50px !important;
+/* Mobile fix for navbar */
+@media (max-width: 768px) {
+  .nav-inner {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
+    overflow-x: hidden;
   }
-
-  .hero-cta {
-    flex-direction: column;
+  
+  .nav-links {
+    width: 100%;
   }
-
-  .stats-bar .container {
-    flex-wrap: wrap;
-  }
-
-  .stat-item {
-    flex: 1 1 45%;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
+  
+  .navbar {
+    overflow-x: hidden;
   }
 }
