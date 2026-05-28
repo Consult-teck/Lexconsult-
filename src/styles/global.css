@@ -332,3 +332,34 @@ input, textarea, select {
 @media (max-width: 600px) {
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
 }
+
+
+/* ===== MOBILE OVERFLOW FIX ===== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Fix contact page on mobile */
+@media (max-width: 768px) {
+  .g2, .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .container {
+    padding: 0 16px !important;
+  }
+
+  .section {
+    padding: 48px 16px !important;
+  }
+
+  img, video {
+    max-width: 100% !important;
+  }
+}
