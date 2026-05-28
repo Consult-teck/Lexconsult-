@@ -410,3 +410,66 @@ input, textarea, select {
     padding: 0 !important;
   }
 }
+
+/* ===== MAKE SERVICE PAGE "HOW WE WORK" MATCH HOME PAGE STYLE ===== */
+@media (max-width: 768px) {
+  /* Target the How We Work section on Services page */
+  .how-we-work,
+  .process-section,
+  [class*="how-we-work"],
+  [class*="process"] {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+  
+  /* Make steps stack vertically like Home page */
+  .how-we-work .steps,
+  .process-section .steps,
+  .how-we-work .grid-2,
+  .process-section .grid-2,
+  .how-we-work .grid-3,
+  .process-section .grid-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+  
+  /* Style each step like Home page */
+  .how-we-work .step,
+  .process-section .step,
+  .how-we-work .process-card,
+  .process-section .process-card {
+    background: white !important;
+    padding: 24px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    width: 100% !important;
+  }
+  
+  /* Step number styling */
+  .how-we-work .step-num,
+  .process-section .step-num {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    color: var(--gold) !important;
+    margin-bottom: 12px !important;
+    display: inline-block !important;
+  }
+  
+  /* Step titles */
+  .how-we-work .step h3,
+  .process-section .step h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 10px !important;
+    color: var(--navy) !important;
+  }
+  
+  /* Step descriptions */
+  .how-we-work .step p,
+  .process-section .step p {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    color: var(--text-secondary) !important;
+    word-wrap: break-word !important;
+  }
+}
