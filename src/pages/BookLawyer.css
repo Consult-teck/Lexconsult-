@@ -1,0 +1,87 @@
+.book-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.lawyer-summary { padding: 28px; }
+.ls-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.ls-header h3 { font-size: 1.1rem; font-family: 'DM Sans', sans-serif; font-weight: 700; color: var(--navy); }
+
+.ls-details { display: flex; flex-direction: column; gap: 12px; }
+.ls-details div { display: flex; justify-content: space-between; font-size: 0.87rem; }
+.ls-details span { color: var(--text-muted); }
+.ls-details strong { color: var(--navy); font-weight: 600; text-align: right; max-width: 60%; }
+
+.ls-fee { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+.ls-fee span { font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; }
+.fee-amount { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--navy); }
+
+.ls-bio { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+.booking-form { padding: 36px; }
+.booking-form h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 6px; }
+
+.booking-disclaimer {
+  display: flex;
+  gap: 10px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+}
+.booking-disclaimer span { color: var(--gold-dark); font-size: 1rem; flex-shrink: 0; }
+.booking-disclaimer p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* Success */
+.booking-success {
+  min-height: 100vh;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px;
+}
+.bs-card {
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+.bs-icon {
+  width: 72px; height: 72px;
+  background: var(--success);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 24px;
+}
+.bs-card h2 { font-size: 1.8rem; color: var(--navy); margin-bottom: 12px; }
+.bs-card > p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; }
+.bs-details {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bs-details div { display: flex; justify-content: space-between; font-size: 0.88rem; }
+.bs-details span { color: var(--text-muted); }
+.bs-details strong { color: var(--navy); font-weight: 600; }
+.bs-note { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .book-layout { grid-template-columns: 1fr; }
+}
