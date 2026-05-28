@@ -470,3 +470,34 @@ table, .table, [class*="table"] {
     overflow-x: hidden;
   }
 }
+
+/* EMERGENCY FIX - Contact form missing on mobile */
+@media (max-width: 768px) {
+  /* Force contact form to show */
+  .contact-grid,
+  .contact-page .grid-2,
+  [class*="contact"] .row {
+    display: block !important;
+  }
+  
+  .contact-form,
+  form:has(input),
+  form:has(textarea) {
+    display: block !important;
+    width: 100% !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Fix text cutting off */
+  p, li, .step p, .service-card p {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  
+  /* Ensure containers aren't hiding content */
+  .container, .section, .home, .contact-page {
+    overflow: visible !important;
+  }
+}
